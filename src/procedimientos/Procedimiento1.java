@@ -51,6 +51,24 @@ public class Procedimiento1 {
             Logger.getLogger(Procedimiento1.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
             Logger.getLogger(Procedimiento1.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            
+            if (cs != null) {
+                try {
+                    cs.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(Procedimiento1.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            
+            if (conn != null) {
+                try {
+                    conn.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(Procedimiento1.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            
         }
         
     }
